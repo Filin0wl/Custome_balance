@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Custome_balance.MainPage"
+             BackgroundColor="Black">
+
+    <StackLayout>
+        <Frame BorderColor="{Binding Path=ColorItem, Mode=TwoWay}"
+               BackgroundColor="#6666"
+               CornerRadius="10"
+               Padding="8"
+               >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapFrame"
+                    NumberOfTapsRequired="1"/>
+            </Frame.GestureRecognizers>
+            <Grid Grid.ColumnSpan="2"
+                  Grid.RowSpan="11">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Column="0"
+                       Grid.Row="0"/>
+                <Button Grid.Column="1"
+                        Grid.Row="0"
+                        BackgroundColor="#6666"
+                        BorderColor="#66cc99"
+                        BorderWidth="2"
+                        CornerRadius="10"
+                        Margin="9"
+                        HorizontalOptions="End"
+                        WidthRequest="125"/>
+                <Label Text ="BALANCE:"
+                       TextColor="Gray"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
+                <Label Text ="$1819.21"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.Column="0"
+                       Grid.Row="2"/>
+                <Label Text ="P&amp;L:"
+                       TextColor="Gray"
+                       Grid.Column="{Binding Path=Positioncolomn , Mode=TwoWay}"
+                       Grid.Row="{Binding Path = PositionRowText, Mode=TwoWay}"/>
+                <Label Text ="$1819.21"
+                       TextColor="{Binding Path=ColorItem, Mode=TwoWay}"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.Column="{Binding Path=Positioncolomn , Mode=TwoWay}"
+                       Grid.Row="{Binding Path = PositionRowMoney, Mode=TwoWay}"/>
+                <Label Text ="FREE BALANCE:"
+                       TextColor="Gray"
+                       Grid.Column="0"
+                       Grid.Row="5"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+                <Label Text ="$1819.21"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.Column="0"
+                       Grid.Row="6"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+                <Label Text ="USED MARGIN:"
+                       TextColor="Gray"
+                       Grid.Column="0"
+                       Grid.Row="7"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+                <Label Text ="$1819.21"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.Column="0"
+                       Grid.Row="8"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+                <Label Text ="EQUITY:"
+                       TextColor="Gray"
+                       Grid.Column="0"
+                       Grid.Row="9"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+                <Label Text ="$1819.21"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       Grid.Column="0"
+                       Grid.Row="10"
+                       IsVisible="{Binding Path=VisibleLabel, Mode=TwoWay}"/>
+
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
